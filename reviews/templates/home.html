@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'app.css'%}">
+    <title>Document</title>
+</head>
+<body>
+    <form action="", method="POST">
+        {% csrf_token %}
+        {% if has_error %}
+            <p>Usename not be empty!</p>
+        {% endif %}
+        {% if len_error %}
+            <p>Usename not more than 20 alpabets!</p>
+        {% endif %}
+
+        {% if email_error %}
+            <p>Email not be empty!</p>
+        {% endif %}
+
+        {% if password_error %}
+            <p>Password not be empty!</p>
+        {% endif %}
+        
+        {% if username_exit_error %}
+            <p>Username already exit in database</p>
+        {% endif %}
+        <table>
+            <tr>
+                <td><label for="username">UserName</label></td>
+                <td><input type="text" name="username" id="username"><br></td>
+            </tr>
+            <tr>
+                <td><label for="email">Email</label></td>
+                <td><input type="email" name="email" id="email"><br></td>
+            </tr>
+            <tr>
+                <td><label for="password">Password</label></td>
+                <td><input type="password" name="password"><br></td>
+            </tr>
+        </table>
+
+        <button>Submit</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,11 @@
+body{
+    background-color: aqua;
+    margin: 100px auto;
+}
+div{
+    background-color: lightcyan;
+    padding:5rem;
+    margin: 100px auto;
+    margin-left: 200px;
+    margin-right: 200px;
+}
